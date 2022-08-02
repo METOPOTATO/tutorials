@@ -1,0 +1,40 @@
+==========Docker Hub==========
+# pull image
+- docker pull ubuntu:16.04
+
+# remove image
+- docker image rm ubuntu:16.04
+
+# run container from image
+- docker run ubuntu
+
+# start a stopped container
+- docker start afd21
+
+# stop container
+- docker stop afd21
+
+# create container from image with detail
+- docker run -it --name 'ABC' -h centos1 centos:latest
+
+# remote container
+- docker rm asd21
+
+# back to running container
+- docker attach asd21
+==========Save image==========
+# save container to image
+- docker commit test_ubuntu test_ubuntu:v1
+
+# save image to file
+- docker save --output image.tar id
+- docker save --output test_ubuntu.tar 5f2
+
+# gen image from file
+- docker load -i image.tar
+
+# named an image
+- docker tag 5f2 newimage:version
+
+==========Save image==========
+docker run -it -v /home/admin/Desktop/Tutorials/test:/home/dulieu --name my_container 5f2

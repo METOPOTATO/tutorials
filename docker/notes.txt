@@ -1,0 +1,81 @@
+======================= Basic use docker =========================
+# docker remove all images
+docker rmi $(docker images -a -q)
+
+# docker remove all containers
+docker rm -f $(docker ps -a -q)
+
+# docker list containers
+docker ps
+
+# list all running containers
+docker container ls --all
+
+# list all images
+docker images -a 
+
+# run a container 
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+    - it:
+        - i: có nghĩa duy trì mở stdin để nhập lệnh.
+        - t: nó có nghĩa là console, cho phép kết nối với terminal để tương tác
+    -- rm: container tự xóa khi kết thúc
+    -v : ánh xạ 1 thư mục máy host vào container, chia sẻ dữ liệu
+
+# docker remove all volumns
+docker volume rm $(docker volume ls -q) 
+
+======================= Save container to an image =========================
+# pull image
+docker pull image
+
+# store container to image, stop container first
+docker stop mycontainer
+
+docker commit mycontainer newimage:myversion
+
+# remmove old container
+docker rm mycontainer
+
+# create new container from new image
+docker run --name newcontainer -it newimage:myversion
+
+# save to file
+
+======================= Share date between host and container =========================
+# mount dir
+docker run -it -v path_in_host:path_in_docker mycontainer
+
+# create a new container that also have mount dir like mycontainer
+docker run -it --volumes-from mycontainer myimage
+
+# list volumes
+docker volume ls
+
+# create new volume
+docker volume create volumn_name
+
+# get info of a volumn_name
+docker volume inspect volumn_name
+
+# delete a volume
+docker volumn rm volumn_name
+
+# mount a disk to container
+docker run -it --mount source=volumn_name,target=path_in_docker mycontainer
+
+# bind a volume to a specified dir in host
+docker volumn create --opt device=path_in_host --opt type=none --opt o=bind volumn_name
+
+# delete volumes that didn't used by containers
+docker volume prune
+
+======================= Network in docker =========================
+# list networks
+docker network ls
+
+# create a bridge network
+docker network create --driver bridge network_name
+
+# add a container to network
+docker network connect network_name container_name
