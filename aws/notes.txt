@@ -1,0 +1,70 @@
+==================================
+gen: ssh-keygen -t rsa
+
+move: mv id_rsa.pub authorized_keys
+
+only allow read and write permission: chmod 600 authorized_keys
+
+copy file from other computer: scp linh@44.203.255.99:/home/linh/.ssh/
+ /home/admin/Desktop/Tutorials/aws
+
+access: ssh -i id_rsa linh@44.203.255.99
+
+restart:  service sshd restart
+
+visudo => allow user permission like root
+
+========== Create Apache webserve ==========
+install: yum install httpd -y
+
+start server apache: service httpd start
+
+yum install telnet 
+
+telnet localhost 80
+
+cd /var/www/html
+
+vi /etc/httpd/conf/httpd.conf 
+
+chown -Rf :apache 
+
+id linh
+
+usermod -a -G apache linh
+
+/home/admin/Desktop/Tutorials/aws/notes.txt
+
+============= Install SSL ==============
+yum -y install mod_ssl
+
+yum install openssl
+
+openssl genrsa > server.key
+
+create crs file: openssl req -new -key server.key > server.csr
+
+https://manage.sslforfree.com/
+linhstartwork@gmail.com
+1s2heaven@
+ssl for free: 
+============= Install FTP Server on aws EC2 =============
+yum -y install vsftpd
+
+sudo su -
+
+vi /etc/vsftpd/vsftpd.conf
+
+pam_service_name=vsftpd
+userlist_enable=YES
+tcp_wrappers=NO
+pasv_enable=YES
+pasv_address=[IP của máy chủ]
+pasv_min_port=60001
+pasv_max_port=60010
+force_dot_files=YES
+use_localtime=YES
+allow_writeable_chroot=YES
+listen=YES
+listen_ipv6=NO
+pasv_addr_resolve=NO
