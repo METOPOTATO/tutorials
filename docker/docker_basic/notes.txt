@@ -36,5 +36,51 @@
 # named an image
 - docker tag 5f2 newimage:version
 
-==========Save image==========
-docker run -it -v /home/admin/Desktop/Tutorials/test:/home/dulieu --name my_container 5f2
+==========Sharing data==========
+# sharing data between a folder in host and container folder
+- docker run -it -v /home/admin/Desktop/Tutorials/test:/home/dulieu --name my_container 5f2
+
+# create volume
+- docker volume create v1
+
+# delete volume
+- docker volume rm v1
+
+# list volume
+- docker volume ls
+
+# check a volume 
+- docker volume inspect v1
+
+# container 2 using volume like container 1
+- docker run -it --name C2 --volumes-from C1 ubuntu:latest
+
+# mount a volume to a folder in docker
+- docker run -it --name C1 --mount source=v1,target=/home/dulieu2 ubuntu:latest
+
+# create a volume from a file in host(not use --mount for connect to container, use -v instead)
+- docker volume create --opt device=/home/admin/Desktop/Tutorials/test --opt type=none --opt o=bind Volume2
+
+- docker run -it -v Volume2:/home/dulieu2 ubuntu:latest
+
+==========Docker Network==========
+# list network
+- docker network ls
+
+# check a bridge
+- docker network inspect bridge
+
+- docker inspect B1
+
+- docker run -it --name B2 -p 8888:80 busybox
+
+- docker network create --driver bridge network1
+
+- docker network rm network1
+
+- docker run -it --name B3 --network mynetwork busybox
+
+- docker run -it --name B3 --network mynetwork -p 9999:80 busybox
+
+# attach running container to a network
+- docker network connect bridge B3
