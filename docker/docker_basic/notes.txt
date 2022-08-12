@@ -17,7 +17,7 @@
 # create container from image with detail
 - docker run -it --name 'ABC' -h centos1 centos:latest
 
-# remote container
+# remove container
 - docker rm asd21
 
 # back to running container
