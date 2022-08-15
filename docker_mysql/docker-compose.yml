@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  xtlab-mysql:
+    image: "mysql:latest"
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: mysql-product
+    restart: always
+    hostname: mysql01
+    networks:
+      - my-network
+    environment:
+      MYSQL_ROOT_PASSWORD: abc123
+      MYSQL_USER: linh
+      MYSQL_PASSWORD: 1234
+      MYSQL_DATABASE: test
+    volumes:
+      - ./db/data:/var/lib/mysql
+      - ./db/my.cnf:/etc/mysql/my.cnf
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 1234:8080
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
