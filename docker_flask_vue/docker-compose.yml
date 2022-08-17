@@ -29,6 +29,18 @@ services:
     networks:
       - backend
 
+  vueapp:
+    container_name: vueapp
+    ports:
+      - 8080:8080
+    build:
+      context: ./vue_app
+      dockerfile: Dockerfile
+    volumes:
+      - ./vue_app:/vue_app
+    networks:
+      - backend
+
 networks:
   backend:
     driver: bridge

@@ -1,15 +1,17 @@
-FROM node:12.18.1-alpine AS build
+FROM node:lts-alpine
 
-WORKDIR /vue_app
+RUN npm install -g http-server
 
-COPY package.json ./
+WORKDIR /app
+
+COPY package*.json ./
 
 RUN npm install
 
 COPY . .
 
-RUN npm run build 
+RUN npm run build
 
-FROM nginx:1.19.0-alpine  AS prod-stage
+EXPOSE 8080
 
-# COPY 
+CMD ["npm", "run", "serve"]
