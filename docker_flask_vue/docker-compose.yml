@@ -29,8 +29,8 @@ services:
     networks:
       - backend
 
-  vueapp:
-    container_name: vueapp
+  vue_app:
+    container_name: vue_app
     ports:
       - 8080:8080
     build:
