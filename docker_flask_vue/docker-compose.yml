@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  flask_app:
+    container_name: flask_app
+    # restart: always
+    build:
+      context: flask_app
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    volumes:
+      - ./flask_app:/flask_app
+    depends_on:
+      - mysql_flask_app
+    networks:
+      - backend
+    command: bash -c 'pip install -r requirements.txt && python3 app.py'
+
+  mysql_flask_app:
+    container_name: mysql_flask_app
+    restart: always
+    image: mysql:latest
+    env_file:
+      - ./flask_app/.env
+    volumes:
+      - ./db/data:/var/lib/mysql
+      - ./db/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
