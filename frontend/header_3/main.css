@@ -1,0 +1,15 @@
+.header {
+  background-color: aliceblue;
+  overflow: hidden;
+}
+
+.header a {
+  float: left;
+  display: block;
+  padding: 14px 16px;
+}
+
+.header a:hover {
+  border-bottom: 3px black solid;
+  background-color: beige;
+}

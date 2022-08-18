@@ -1,0 +1,6 @@
+
+
+docker volume create mysql-python-app-volume
+docker volume create mysql-python-app-volume-config
+
+docker network create mysql-python-app-network
