@@ -1,0 +1,58 @@
+.header {
+  display: flex;
+  top: 0px;
+  position: relative;
+  border-bottom: 2px black solid;
+}
+
+.header .left {
+  width: 15%;
+}
+.header .left .icon {
+  text-align: center;
+  align-self: center;
+  height: 100%;
+  padding: 10px 10px 10px 10px;
+}
+
+.header .left .icon:hover {
+  background-color: aliceblue;
+}
+
+.header .center {
+  width: 70%;
+  padding: 0;
+}
+
+.header .center ul {
+  list-style: none;
+  display: flex;
+  top: 0px;
+  justify-content: center;
+  margin: 0;
+}
+
+.header .center ul li {
+  padding: 10px;
+}
+
+.header .right {
+  width: 15%;
+  text-align: center;
+  align-self: center;
+  /* padding: 10px 10px 10px 10px; */
+}
+
+/* .header .right :hover {
+  background-color: antiquewhite;
+
+} */
+
+.header .right .right-content {
+  height: 100%;
+}
+.header .right .right-content:hover {
+  background-color: aliceblue;
+
+  overflow: hidden;
+}
