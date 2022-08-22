@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+header {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.navbar {
+  background-color: aliceblue;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar div {
+  display: inline;
+}
