@@ -6,17 +6,28 @@
 
 .header div {
   display: inline;
+  /* background-color: aliceblue; */
   /* width: 100%; */
 }
 
 .header .left {
   width: 20%;
+  padding: 14px 16px;
 }
 
 .header .center {
   width: 60%;
+  padding: 14px 16px;
+  background-color: aliceblue;
+}
+
+.header .center a {
+  text-decoration: none;
+  background-color: aliceblue;
+  /* padding: 14px 16px; */
 }
 
 .header .right {
   width: 60%;
+  padding: 14px 16px;
 }
