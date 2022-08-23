@@ -5,7 +5,7 @@ services:
     image: "mysql:latest"
     command: --default-authentication-plugin=mysql_native_password
     container_name: mysql-product
-    restart: always
+    # restart: always
     hostname: mysql01
     networks:
       - my-network
@@ -21,7 +21,7 @@ services:
 
   adminer:
     image: adminer
-    restart: always
+    # restart: always
     ports:
       - 1234:8080
     networks:
