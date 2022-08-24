@@ -11,11 +11,52 @@ header {
 .navbar {
   background-color: aliceblue;
   height: 60px;
-  display: flex;
+  position: relative;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; */
 }
 
 .navbar div {
   display: inline;
+}
+
+.navbar .left {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 100px;
+  left: 100px;
+  /* height: 100%; */
+  /* background-color: aqua; */
+}
+
+.navbar .center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: beige;
+  /* background-color: azure; */
+  padding: 10px;
+}
+
+.navbar .center a {
+  text-decoration: none;
+  padding: 20px 20px;
+}
+
+.navbar .right {
+  position: absolute;
+  right: 100px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.test {
+  top: 100px;
+  background-color: aqua;
+  position: relative;
+  text-align: center;
+  /* position: static; */
 }
