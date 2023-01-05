@@ -19,7 +19,7 @@ header{
   align-items: center;
   position: sticky;
   background-color: white;
-
+  z-index: 2;
   top: 0;
   border-bottom: 2px solid;
   border-bottom-color: whitesmoke;
@@ -109,7 +109,14 @@ header .navbar .center a span{
 .content .card{
   height: 400px;
   margin: 20px;
-  box-shadow: 10px 10px 5px 10px lightblue;
+  box-shadow: 4px 4px 1px 4px lightblue;
+  border-radius: 1rem;
+}
+
+.content .card:hover{
+  position: relative;
+  top: -20px;
+  /* z-index: 0; */
 }
 
 .content .card .card-top{
