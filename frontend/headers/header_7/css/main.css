@@ -1,0 +1,177 @@
+@import url('intro.css');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body{
+  font-family: Inter,sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+header{
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  background-color: white;
+
+  top: 0;
+  border-bottom: 2px solid;
+  border-bottom-color: whitesmoke;
+}
+
+header div.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  width: 70%;
+  height: 60px;
+  border-radius: 20px;
+} 
+
+header .navbar .left{
+  width: 20%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .navbar .left img{
+  width: auto;
+  height: 60px;
+}
+
+header .navbar .right{
+  width: 20%;
+  margin: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header div.navbar .center{
+  height: 60px;
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+}
+
+header .navbar .center a{
+  text-decoration: none; 
+  padding: 0 30px 0 30px;
+  height: 60px;
+  line-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px white solid;
+
+  position: relative;
+  transition: top ease 0.5s;
+  top: 0;
+}
+
+header .navbar .center a:hover{
+  background-color: rgb(244, 250, 255);
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: rgb(175, 175, 175);
+  top: -9px;
+}
+
+header .navbar .center a span{
+  text-align: center;
+  vertical-align: middle;
+  color: cornflowerblue;
+}
+
+/* Intro */
+
+/* content */
+.content{
+  margin: 40px 10% 0 10%;
+  border-radius: 30px;
+  border: 2px solid whitesmoke;
+  padding: 10px;
+
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+}
+
+.content .card{
+  height: 400px;
+  margin: 20px;
+  box-shadow: 10px 10px 5px 10px lightblue;
+}
+
+.content .card .card-top{
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 200px;
+}
+
+.content .card .card-top img{
+  height: 200px;
+  width: 100%;
+}
+
+.content .card .card-title{
+  margin-top: 15px;
+  text-align: center;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.content .card .card-intro{
+  margin-top: 10px;
+  padding: 0 20px 0 20px;
+}
+
+.content .card .card-intro .card-content{
+  font-size: 15px;
+  font-weight: 200;
+  text-align: justify;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.content .card .card-intro .card-time{
+  margin-top: 10px;
+  text-align: right;
+  font-size: 15px;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.content .card .card-tags ul{
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 200;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.content .card .card-tags ul li{
+  list-style: none;
+  padding: 10px;
+  margin-right: 10px;
+  background-color: rgb(173, 217, 255);
+  border-radius: 0.5rem;
+}
