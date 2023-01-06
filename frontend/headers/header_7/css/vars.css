@@ -1,0 +1,26 @@
+:root {
+  --body-font-family: Inter, sans-serif;
+  --body-font-size: 1.1rem;
+  --body-font-weight: 600;
+  --body-border: .15rem;
+
+  --header-width: 100%;
+  --header-height: 5rem;
+  --header-border: 2px solid whitesmoke;
+
+  --header-navbar-width: 70%;
+  --header-navbar-left-width: 20%;
+  --header-navbar-center-width: 60%;
+  --header-navbar-right-width: 20%;
+  --header-navbar-margin: 0;
+
+  --header-image-height: 4rem;
+  /* --header-navbar-border-radius: 20px; */
+  
+  --index-layer-2: 2;
+  --index-layer-1: 1;
+  --index-layer-0: 0;
+
+
+}
+

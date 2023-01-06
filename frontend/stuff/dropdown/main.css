@@ -1,0 +1,138 @@
+@import url("intro.css");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  background-color: white;
+  z-index: 2;
+  top: 0;
+  border-bottom: 2px solid;
+  border-bottom-color: whitesmoke;
+}
+
+header div.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  height: 60px;
+  border-radius: 20px;
+}
+
+header .navbar .left {
+  width: 20%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .navbar .left img {
+  width: auto;
+  height: 60px;
+}
+
+header .navbar .right {
+  width: 20%;
+  margin: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header div.navbar .center {
+  height: 60px;
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+}
+
+header .navbar .center a {
+  text-decoration: none;
+  padding: 0 30px 0 30px;
+  height: 60px;
+  line-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px white solid;
+
+  position: relative;
+  transition: top ease 0.5s;
+  top: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+
+
+header .navbar .center a:hover {
+  background-color: rgb(244, 250, 255);
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: rgb(175, 175, 175);
+  top: -9px;
+  position: relative;
+}
+
+header .navbar .center a span {
+  text-align: center;
+  vertical-align: middle;
+  color: cornflowerblue;
+
+  margin-right: 5px;
+}
+
+
+header .navbar .center a:hover .dropdown{
+  display: block;
+}
+
+header .navbar .center a .dropdown {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  background-color: antiquewhite;
+  padding: 10px 0 10px 0;
+  width: 100%;
+
+  background-color: rgb(244, 250, 255);
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: rgb(175, 175, 175);
+}
+
+header .navbar .center a ul{
+  padding: 0 30px 0 30px;
+}
+
+header .navbar .center a ul li {
+  list-style: none;
+  padding: 0;
+}
