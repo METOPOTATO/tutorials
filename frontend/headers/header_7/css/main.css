@@ -175,6 +175,8 @@ header .navbar .center a span {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
+
+  height: 70px;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }

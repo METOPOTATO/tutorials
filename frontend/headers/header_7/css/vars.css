@@ -1,9 +1,16 @@
 :root {
+  /* FONT */
   --body-font-family: Inter, sans-serif;
+
+  /* COLOR */
+  --body-border-color: whitesmoke;
+
+  /* BODY */
   --body-font-size: 1.1rem;
   --body-font-weight: 600;
   --body-border: .15rem;
 
+  /* HEADER */
   --header-width: 100%;
   --header-height: 5rem;
   --header-border: 2px solid whitesmoke;
@@ -15,8 +22,8 @@
   --header-navbar-margin: 0;
 
   --header-image-height: 4rem;
-  /* --header-navbar-border-radius: 20px; */
-  
+
+  /* INDEX */
   --index-layer-2: 2;
   --index-layer-1: 1;
   --index-layer-0: 0;
